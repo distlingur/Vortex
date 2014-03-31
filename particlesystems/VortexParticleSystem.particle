@@ -19,7 +19,7 @@ particle_system Draaikolk/VortexStream {
 	
 	// affector for gravity and swirling the particles
 	affector LinearForce {
-		force_vector		0 -15 0
+		force_vector		0 -100 0
 		force_application	add
 	}
 }

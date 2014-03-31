@@ -1,7 +1,10 @@
 #ifndef MYAPPLICATION_H
 #define MYAPPLICATION_H
 #include "OGRE\Ogre.h"
+#include "OgreRoot.h"
+#include "OgreParticleSystemManager.h"
 #include "MyFrameListener.h"
+#include "OrbitingAffectorFactory.h"
 
 class MyApplication {
 private:
@@ -14,6 +17,8 @@ private:
 
 	Ogre::SceneNode*		_SinbadNode;
 	Ogre::Entity*			_SinbadEnt;
+
+	OrbitingAffectorFactory*	pAffFact;
 
 public: 
 	MyApplication();

@@ -20,6 +20,9 @@ void MyApplication::loadResources() {
 	Ogre::ConfigFile::SectionIterator sectionIter = cf.getSectionIterator();
 	Ogre::String sectionName, typeName, dataName;
 
+	pAffFact = new OrbitingAffectorFactory();
+	Ogre::ParticleSystemManager::getSingleton().addAffectorFactory(pAffFact);
+
 	// For each section - load each resource or collection
 	while (sectionIter.hasMoreElements()) {
 		

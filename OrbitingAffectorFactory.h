@@ -7,23 +7,21 @@
 #include "OgreParticleAffectorFactory.h"
 #include "OrbitingAffector.h"
 
-namespace Ogre {
+using namespace Ogre;
 
-	/** Factory class for OrbitingAffector. */
-	class _OgreParticleFXExport OrbitingAffectorFactory : public ParticleAffectorFactory
+/** Factory class for OrbitingAffector. */
+class OrbitingAffectorFactory : public ParticleAffectorFactory
+{
+	/** See ParticleAffectorFactory */
+	String getName() const { return "Orbiting"; }
+
+	/** See ParticleAffectorFactory */
+	ParticleAffector* createAffector(ParticleSystem* psys)
 	{
-		/** See ParticleAffectorFactory */
-		String getName() const { return "Orbiting"; }
-
-		/** See ParticleAffectorFactory */
-		ParticleAffector* createAffector(ParticleSystem* psys)
-		{
-			ParticleAffector* p = OGRE_NEW OrbitingAffector(psys);
-			mAffectors.push_back(p);
-			return p;
-		}
-	};
-
-}
+		ParticleAffector* p = new OrbitingAffector(psys);
+		mAffectors.push_back(p);
+		return p;
+	}
+};
 
 #endif
