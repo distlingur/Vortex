@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 31.3.2014 17:45:29.
      1>Project "C:\Users\Elin\Documents\RU\GEDE_Final\Vortex\Vortex.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
@@ -28,3 +29,25 @@
 Build succeeded.
 
 Time Elapsed 00:00:08.54
+=======
+﻿Build started 29.3.2014 15:07:32.
+     1>Project "C:\lalli\leikja\Vortex.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Vortex.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "Debug\Vortex.unsuccessfulbuild".
+         Touching "Debug\Vortex.lastbuildstate".
+     1>Done Building Project "C:\lalli\leikja\Vortex.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.22
+>>>>>>> ac7345970839b19c8a992fc09a225e7781f0410d
