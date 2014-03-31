@@ -12,14 +12,18 @@ particle_system Draaikolk/VortexStream {
 		// Make the emitter emit 3 particles per second. 
 		emission_rate		5
 		// Emitt the particles in the given direction, at a velocity of 20 units per second.
-		direction		0 0 .5 
+		direction		-1 0 0 
 		velocity		15
 		//angle		90
 	}
 	
 	// affector for gravity and swirling the particles
-	affector LinearForce {
+	/*affector LinearForce {
 		force_vector		0 -100 0
 		force_application	add
+	}*/
+
+	affector Orbiting {
+		mCol				red
 	}
 }
