@@ -14,11 +14,17 @@ MyApplication::~MyApplication() {
 void MyApplication::loadResources() {
 	// Load the chosen resource file.
 	Ogre::ConfigFile cf;
+
 	cf.load("c://OgreSDK//resources_d.cfg");
+	cf.load("resources_d.cfg");
+
 
 	// Create the necessary vars for iterating the resource file.
 	Ogre::ConfigFile::SectionIterator sectionIter = cf.getSectionIterator();
 	Ogre::String sectionName, typeName, dataName;
+
+	pAffFact = new OrbitingAffectorFactory();
+	Ogre::ParticleSystemManager::getSingleton().addAffectorFactory(pAffFact);
 
 	// For each section - load each resource or collection
 	while (sectionIter.hasMoreElements()) {
@@ -40,7 +46,11 @@ void MyApplication::loadResources() {
 
 int MyApplication::startUp() {
 	// Create the root with the selected configurations
+
 	_root = new Ogre::Root("c://OgreSDK//plugins_d.cfg");
+	//_root = new Ogre::Root("plugins.cfg");
+	_root = new Ogre::Root("plugins_d.cfg");
+
 
 	// Show the configuration window.
 	if (!_root->showConfigDialog()) {
@@ -55,7 +65,7 @@ int MyApplication::startUp() {
 
 	// Create a camera and configure it.
 	Ogre::Camera* camera = _sceneManager->createCamera("Camera");
-	camera->setPosition(Ogre::Vector3(0, 0, 50));
+	camera->setPosition(Ogre::Vector3(0, 100, 150));
 	camera->lookAt(Ogre::Vector3(0, 0, 0));
 	camera->setNearClipDistance(5);
 
@@ -112,6 +122,37 @@ void MyApplication::createScene() {
 	direction = emitter - origin;
 	float ringRadius = 15.0;
 
+
+	// Particle system extravaganza
+	Ogre::Vector3 emitter;
+	Ogre::Vector3 origin;
+	Ogre::Vector3 direction;
+	direction = emitter - origin;
+	float ringRadius = 15.0;
+
+	Ogre::SceneNode* particleNode1 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*1) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*1) ) * ringRadius);
+	Ogre::SceneNode* particleNode2 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*2) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*2) ) * ringRadius);
+	Ogre::SceneNode* particleNode3 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*3) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*3) ) * ringRadius);
+	Ogre::SceneNode* particleNode4 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*4) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*4) ) * ringRadius);
+	Ogre::SceneNode* particleNode5 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*5) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*5) ) * ringRadius);
+
+	Ogre::ParticleSystem* ringPartSystem1 = _sceneManager->createParticleSystem("vortex1", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem2 = _sceneManager->createParticleSystem("vortex2", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem3 = _sceneManager->createParticleSystem("vortex3", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem4 = _sceneManager->createParticleSystem("vortex4", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem5 = _sceneManager->createParticleSystem("vortex5", "Draaikolk/VortexStream");
+
+	particleNode1->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode2->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode3->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode4->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode5->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+
+	particleNode1->attachObject(ringPartSystem1);
+	particleNode2->attachObject(ringPartSystem2);
+	particleNode3->attachObject(ringPartSystem3);
+	particleNode4->attachObject(ringPartSystem4);
+	particleNode5->attachObject(ringPartSystem5);
 }
 
 // Render the frame

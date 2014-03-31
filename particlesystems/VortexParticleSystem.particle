@@ -1,0 +1,25 @@
+particle_system Draaikolk/VortexStream {
+	// Make the particles use the "Examples/Smoke" material, and be 10x10 units large.
+	material				Examples/Smoke
+	particle_width			1
+	particle_height			1
+	// Make the emitter limit the emitter to have at maximum 500 particles active.
+	// And set the particle type as point, which always faces the camera.  
+	quota				50000
+	billboard_type			point
+	
+	emitter Point {
+		// Make the emitter emit 3 particles per second. 
+		emission_rate		5
+		// Emitt the particles in the given direction, at a velocity of 20 units per second.
+		direction		0 0 .5 
+		velocity		15
+		//angle		90
+	}
+	
+	// affector for gravity and swirling the particles
+	affector LinearForce {
+		force_vector		0 -100 0
+		force_application	add
+	}
+}

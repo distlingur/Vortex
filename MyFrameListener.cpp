@@ -28,7 +28,6 @@ MyFrameListener::MyFrameListener(Ogre::RenderWindow* win, Ogre::Camera* cam, Ogr
 
 	_aniStateTop = ent->getAnimationState("RunTop");
 	_aniStateTop->setLoop(false);
-
 }
 
 MyFrameListener::~MyFrameListener() {
