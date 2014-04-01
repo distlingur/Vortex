@@ -14,12 +14,25 @@ class OrbitingAffector : public ParticleAffector
 {
 public:
 	/** Command object for color (see ParamCommand).*/
-    class CmdColor : public ParamCommand
+    class CmdAngle : public ParamCommand
     {
     public:
         String doGet(const void* target) const;
         void doSet(void* target, const String& val);
     };
+	class CmdRadius : public ParamCommand
+    {
+    public:
+        String doGet(const void* target) const;
+        void doSet(void* target, const String& val);
+    };
+	class CmdDrop : public ParamCommand
+    {
+    public:
+        String doGet(const void* target) const;
+        void doSet(void* target, const String& val);
+    };
+
 
 	OrbitingAffector(ParticleSystem* psys);
 
@@ -27,14 +40,22 @@ public:
 
 	void _affectParticles(ParticleSystem* pSystem, Real timeElapsed);
 
-	void setColor(const ColourValue& col);
-	ColourValue getColor(void) const;
+	Real getAngle(void) const;
+	void setAngle(const Real& col);
+	Real getRadius(void) const;
+	void setRadius(const Real& col);
+	Real getDrop(void) const;
+	void setDrop(const Real& col);
 
 	/// Command objects
-	static CmdColor msColorCmd;
+	static CmdAngle msAngleCmd;
+	static CmdRadius msRadiusCmd;
+	static CmdDrop msDropCmd;
 
 protected:
-	ColourValue mCol;
+	Real mAngle;
+	Real mRadius;
+	Real mDrop;
 };
 
 #endif

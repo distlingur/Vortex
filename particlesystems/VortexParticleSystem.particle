@@ -17,13 +17,15 @@ particle_system Draaikolk/VortexStream {
 		//angle		90
 	}
 	
-	// affector for gravity and swirling the particles
+	// affector for gravity
 	/*affector LinearForce {
 		force_vector		0 -100 0
 		force_application	add
 	}*/
 
 	affector Orbiting {
-		mCol				red
+		angle				6
+		radius				15
+		drop				0.1
 	}
 }

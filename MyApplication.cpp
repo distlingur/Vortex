@@ -15,7 +15,7 @@ void MyApplication::loadResources() {
 	// Load the chosen resource file.
 	Ogre::ConfigFile cf;
 
-	cf.load("c://OgreSDK//resources_d.cfg");
+	//cf.load("c://OgreSDK//resources_d.cfg");
 	cf.load("resources_d.cfg");
 
 
@@ -47,8 +47,7 @@ void MyApplication::loadResources() {
 int MyApplication::startUp() {
 	// Create the root with the selected configurations
 
-	_root = new Ogre::Root("c://OgreSDK//plugins_d.cfg");
-	//_root = new Ogre::Root("plugins.cfg");
+	//_root = new Ogre::Root("c://OgreSDK//plugins_d.cfg");
 	_root = new Ogre::Root("plugins_d.cfg");
 
 
@@ -58,7 +57,7 @@ int MyApplication::startUp() {
 	}
 
 	// Create a Window
-	Ogre::RenderWindow* window = _root->initialise(true, "Ogre3D Beginners Guide");
+	Ogre::RenderWindow* window = _root->initialise(true, "Ogre3D Draaikolk");
 
 	// Initiate the scenemanager.
 	_sceneManager = _root->createSceneManager(Ogre::ST_GENERIC);
@@ -112,17 +111,7 @@ void MyApplication::createScene() {
 	_sceneManager->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_ADDITIVE);
 
 	_sceneManager->setSkyDome(true, "Examples/CloudySky", 5, 8);
-	Ogre::ParticleSystem* partSystem = _sceneManager->createParticleSystem("vortex", "Draaikolk/VortexStream");
-	// Attach the particle system to Sinbad
-	_SinbadNode->attachObject(partSystem);
-
-	Ogre::Vector3 emitter;
-	Ogre::Vector3 origin;
-	Ogre::Vector3 direction;
-	direction = emitter - origin;
-	float ringRadius = 15.0;
-
-
+	
 	// Particle system extravaganza
 	Ogre::Vector3 emitter;
 	Ogre::Vector3 origin;
