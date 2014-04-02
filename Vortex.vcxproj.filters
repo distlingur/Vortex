@@ -24,6 +24,9 @@
     <ClCompile Include="MyFrameListener.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OrbitingAffector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyApplication.h">
@@ -32,5 +35,16 @@
     <ClInclude Include="MyFrameListener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OrbitingAffector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbitingAffectorFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ParticleSystems\VortexParticleSystem.particle">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
