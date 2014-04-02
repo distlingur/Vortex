@@ -57,6 +57,7 @@ void OrbitingAffector::_affectParticles(ParticleSystem* pSystem, Real timeElapse
 	while (!pi.end())
     {
 		p = pi.getNext();
+<<<<<<< HEAD
 		p->setDimensions(2, 2);
 		theAngle = (Ogre::Vector2(1,0)).angleTo(Ogre::Vector2(p->position.x,p->position.z));//(Ogre::Vector3(0,0,0)).angleBetween(p->position);
 
@@ -83,20 +84,6 @@ void OrbitingAffector::_affectParticles(ParticleSystem* pSystem, Real timeElapse
 		
 	}
 
-	/*while (!pi.end())
-    {
-		p = pi.getNext();
-		p->setDimensions(2, 2);
-
-		mAngle += mAngle;
-		if(mAngle > 360)
-			mAngle = mAngle - 360;
-		p->position.x = mRadius * Ogre::Math::Cos(mAngle);
-		p->position.z = mRadius * Ogre::Math::Sin(mAngle);
-		p->position.y -= mDrop;
-
-		//p->
-	}*/
 }
 
 
