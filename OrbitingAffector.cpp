@@ -14,6 +14,7 @@ OrbitingAffector::OrbitingAffector(ParticleSystem* psys)
 	mDrop(0)
 {
 	mType = "Orbiting";
+	count = 0;
 
 	// Setup parameters
 	if(createParamDictionary("Orbiting")) {
@@ -42,18 +43,60 @@ OrbitingAffector::~OrbitingAffector(void)
 void OrbitingAffector::_affectParticles(ParticleSystem* pSystem, Real timeElapsed) {
 	ParticleIterator pi = pSystem->_getIterator();    
 	Particle* p;
+	Ogre::Radian theAngle;
+	float distanceToOrigin;
+
+	int degrees = 1;
+	float degToRad = degrees * Ogre::Math::PI/180;
+	int theDistance = 20;
+	float decreasingRadius = theDistance * degToRad/(2 * Ogre::Math::PI);
+
+	
+
 
 	while (!pi.end())
     {
 		p = pi.getNext();
-		p->setDimensions(8, 8);
+		p->setDimensions(2, 2);
+		theAngle = (Ogre::Vector2(1,0)).angleTo(Ogre::Vector2(p->position.x,p->position.z));//(Ogre::Vector3(0,0,0)).angleBetween(p->position);
+
+		distanceToOrigin = Ogre::Math::Sqrt(Ogre::Math::Sqr(p->position.x) + Ogre::Math::Sqr(p->position.z));
+
+
+		distanceToOrigin -= decreasingRadius;
+		//std::cout << "ANGLE BEFORE OPERATOR: " << theAngle << std::endl;
+		theAngle.operator+=((Ogre::Radian)degToRad);
+		//std::cout << "ANGLE AFTER OPERATOR: " << theAngle << std::endl;
+
+
+		if(distanceToOrigin > 0)
+		{
+			p->position.x = distanceToOrigin * Ogre::Math::Cos(theAngle);
+			p->position.z = distanceToOrigin * Ogre::Math::Sin(theAngle);
+			
+		}
+		p->position.y -= mDrop;
+
+		//std::cout << "ANGLE FINAL: " << theAngle << std::endl;
+		//theAngle = p->position.angleBetween(Ogre::Vector3(0,0,0));
+
+		
+	}
+
+	/*while (!pi.end())
+    {
+		p = pi.getNext();
+		p->setDimensions(2, 2);
+
 		mAngle += mAngle;
 		if(mAngle > 360)
 			mAngle = mAngle - 360;
 		p->position.x = mRadius * Ogre::Math::Cos(mAngle);
 		p->position.z = mRadius * Ogre::Math::Sin(mAngle);
-		p->position.y += mDrop;
-	}
+		p->position.y -= mDrop;
+
+		//p->
+	}*/
 }
 
 

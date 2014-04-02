@@ -56,6 +56,7 @@ protected:
 	Real mAngle;
 	Real mRadius;
 	Real mDrop;
+	int count;
 };
 
 #endif

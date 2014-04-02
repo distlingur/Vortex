@@ -1,6 +1,7 @@
 #include "MyApplication.h"
 
 
+
 MyApplication::MyApplication() : _root(NULL), _sceneManager(NULL), _listener(NULL) {
 	// Do some constructing
 }
@@ -17,6 +18,7 @@ void MyApplication::loadResources() {
 
 	//cf.load("c://OgreSDK//resources_d.cfg");
 	cf.load("resources_d.cfg");
+	//cf.load("C://Users//Raggi//Skoli//Hogun//Final//Vortex//resources_d.cfg");
 
 
 	// Create the necessary vars for iterating the resource file.
@@ -117,31 +119,75 @@ void MyApplication::createScene() {
 	Ogre::Vector3 origin;
 	Ogre::Vector3 direction;
 	direction = emitter - origin;
-	float ringRadius = 15.0;
+	float ringRadius = 30.0;
 
-	Ogre::SceneNode* particleNode1 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*1) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*1) ) * ringRadius);
-	Ogre::SceneNode* particleNode2 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*2) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*2) ) * ringRadius);
-	Ogre::SceneNode* particleNode3 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*3) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*3) ) * ringRadius);
-	Ogre::SceneNode* particleNode4 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*4) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*4) ) * ringRadius);
-	Ogre::SceneNode* particleNode5 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 5*5) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 5*5) ) * ringRadius);
+	Ogre::SceneNode* particleNode1 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*1) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*1) ) * ringRadius);
+	Ogre::SceneNode* particleNode2 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*2) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*2) ) * ringRadius);
+	Ogre::SceneNode* particleNode3 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*3) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*3) ) * ringRadius);
+	Ogre::SceneNode* particleNode4 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*4) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*4) ) * ringRadius);
+	Ogre::SceneNode* particleNode5 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*5) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*5) ) * ringRadius);
+	
+	Ogre::SceneNode* particleNode6 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*6) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*6) ) * ringRadius);
+	Ogre::SceneNode* particleNode7 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*7) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*7) ) * ringRadius);
+	Ogre::SceneNode* particleNode8 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*8) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*8) ) * ringRadius);
+	Ogre::SceneNode* particleNode9 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*9) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*9) ) * ringRadius);
+	Ogre::SceneNode* particleNode10 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*10) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*10) ) * ringRadius);
+
+	Ogre::SceneNode* particleNode11 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*11) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*11) ) * ringRadius);
+	Ogre::SceneNode* particleNode12 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*12) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*12) ) * ringRadius);
+	Ogre::SceneNode* particleNode13 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*13) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*13) ) * ringRadius);
+	Ogre::SceneNode* particleNode14 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*14) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*14) ) * ringRadius);
+	Ogre::SceneNode* particleNode15 = _sceneManager->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(Ogre::Math::Cos(Ogre::Math::TWO_PI / 15*15) , 0 , Ogre::Math::Sin(Ogre::Math::TWO_PI / 15*15) ) * ringRadius);
+
+
 
 	Ogre::ParticleSystem* ringPartSystem1 = _sceneManager->createParticleSystem("vortex1", "Draaikolk/VortexStream");
 	Ogre::ParticleSystem* ringPartSystem2 = _sceneManager->createParticleSystem("vortex2", "Draaikolk/VortexStream");
 	Ogre::ParticleSystem* ringPartSystem3 = _sceneManager->createParticleSystem("vortex3", "Draaikolk/VortexStream");
 	Ogre::ParticleSystem* ringPartSystem4 = _sceneManager->createParticleSystem("vortex4", "Draaikolk/VortexStream");
 	Ogre::ParticleSystem* ringPartSystem5 = _sceneManager->createParticleSystem("vortex5", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem6 = _sceneManager->createParticleSystem("vortex6", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem7 = _sceneManager->createParticleSystem("vortex7", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem8 = _sceneManager->createParticleSystem("vortex8", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem9 = _sceneManager->createParticleSystem("vortex9", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem10 = _sceneManager->createParticleSystem("vortex10", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem11 = _sceneManager->createParticleSystem("vortex11", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem12 = _sceneManager->createParticleSystem("vortex12", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem13 = _sceneManager->createParticleSystem("vortex13", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem14 = _sceneManager->createParticleSystem("vortex14", "Draaikolk/VortexStream");
+	Ogre::ParticleSystem* ringPartSystem15 = _sceneManager->createParticleSystem("vortex15", "Draaikolk/VortexStream");
 
 	particleNode1->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
 	particleNode2->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
 	particleNode3->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
 	particleNode4->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
 	particleNode5->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode6->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode7->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode8->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode9->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode10->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode11->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode12->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode13->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode14->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
+	particleNode15->lookAt(direction, Ogre::Node::TS_PARENT, Ogre::Vector3::UNIT_Z);
 
 	particleNode1->attachObject(ringPartSystem1);
 	particleNode2->attachObject(ringPartSystem2);
 	particleNode3->attachObject(ringPartSystem3);
 	particleNode4->attachObject(ringPartSystem4);
 	particleNode5->attachObject(ringPartSystem5);
+	particleNode6->attachObject(ringPartSystem6);
+	particleNode7->attachObject(ringPartSystem7);
+	particleNode8->attachObject(ringPartSystem8);
+	particleNode9->attachObject(ringPartSystem9);
+	particleNode10->attachObject(ringPartSystem10);
+	particleNode11->attachObject(ringPartSystem11);
+	particleNode12->attachObject(ringPartSystem12);
+	particleNode13->attachObject(ringPartSystem13);
+	particleNode14->attachObject(ringPartSystem14);
+	particleNode15->attachObject(ringPartSystem15);
 }
 
 // Render the frame

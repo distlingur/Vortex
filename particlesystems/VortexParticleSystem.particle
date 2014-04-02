@@ -10,22 +10,23 @@ particle_system Draaikolk/VortexStream {
 	
 	emitter Point {
 		// Make the emitter emit 3 particles per second. 
-		emission_rate		5
+		emission_rate		50
 		// Emitt the particles in the given direction, at a velocity of 20 units per second.
 		direction		-1 0 0 
-		velocity		15
+		velocity		1
+		time_to_live 	20
 		//angle		90
 	}
 	
 	// affector for gravity
 	/*affector LinearForce {
-		force_vector		0 -100 0
+		force_vector		0 -1 0
 		force_application	add
 	}*/
 
 	affector Orbiting {
 		angle				6
-		radius				15
+		radius				30
 		drop				0.1
 	}
 }
