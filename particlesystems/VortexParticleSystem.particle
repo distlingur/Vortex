@@ -1,12 +1,12 @@
 particle_system Draaikolk/VortexStream {
 	// Make the particles use the "Examples/Smoke" material, and be 10x10 units large.
-	material				Examples/Smoke
-	particle_width			1
-	particle_height			1
+	material				Examples/VortexWater2
+	particle_width			5
+	particle_height			5
 	// Make the emitter limit the emitter to have at maximum 500 particles active.
 	// And set the particle type as point, which always faces the camera.  
 	quota				50000
-	billboard_type			point
+	billboard_type		point
 	
 	emitter Point {
 		// Make the emitter emit 3 particles per second. 
@@ -29,4 +29,6 @@ particle_system Draaikolk/VortexStream {
 		radius				30
 		drop				0.1
 	}
+	
+
 }
