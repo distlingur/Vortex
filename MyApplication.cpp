@@ -96,14 +96,14 @@ void MyApplication::createScene() {
 	_SinbadNode->attachObject(_SinbadEnt);
 
 	// Create the plane.
-	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, -5);
+	/*Ogre::Plane plane(Ogre::Vector3::UNIT_Y, -5);
 	Ogre::MeshManager::getSingleton().createPlane("plane", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane,
 		1500, 1500, 200, 200, true, 1, 5, 5, Ogre::Vector3::UNIT_Z);
 
 	// Set the plane as the ground and add a texture to it.
 	Ogre::Entity* ground = _sceneManager->createEntity("LightPlaneEntity", "plane");
 	_sceneManager->getRootSceneNode()->createChildSceneNode()->attachObject(ground);
-	ground->setMaterialName("Examples/BeachStones");
+	ground->setMaterialName("Examples/BeachStones");*/
 
 	// Set up the scene lighting
 	_sceneManager->setAmbientLight(Ogre::ColourValue(0.3f, 0.3f, 0.3f));
